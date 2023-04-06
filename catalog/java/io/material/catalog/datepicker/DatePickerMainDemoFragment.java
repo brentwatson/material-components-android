@@ -41,9 +41,11 @@ import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.snackbar.Snackbar;
 import io.material.catalog.feature.DemoFragment;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /** A fragment that displays the main Picker demos for the Catalog app. */
@@ -185,6 +187,7 @@ public class DatePickerMainDemoFragment extends DemoFragment {
         builder.setSelection(nextMonth);
       }
       builder.setInputMode(inputMode);
+      builder.setTextInputFormat(new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault()));
       return builder;
     } else {
       MaterialDatePicker.Builder<Pair<Long, Long>> builder =
